@@ -1,0 +1,25 @@
+{
+  "name": "portfolio",
+  "description": "More robust portfolio site",
+  "main": "app.js",
+  "authors": [
+    "Nathan Riemer <nathan.riemer@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/NathanRiemer/portfolio",
+  "moduleType": [
+    "node"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.2.0",
+    "angular": "^1.5.0"
+  }
+}
