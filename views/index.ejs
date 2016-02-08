@@ -36,10 +36,10 @@
 
 
     <div class="ui main container">
-      <section id="about">
-        <h1>Nathan Riemer</h1>
+      <div class="ui raised text container segment" id="about">
+        <h1 class="ui header">Nathan Riemer</h1>
         <p>I'm a web developer with a passion for problem solving.</p>
-      </section>
+      </div>
 
       <section id="projects">
         <h1>Projects:</h1>
@@ -53,7 +53,8 @@
               <img src="{{project.image}}">
             </div>
             <div class="content">
-              <a class="header" href="{{project.url}}">{{project.title}}</a>
+              <a class="header" href="{{project.url}}" target="_blank">{{project.title}}</a>
+              <a class="meta" href="{{project.github}}" target="_blank">GitHub Repo</a>
               <div class="description">
                 {{project.description}}
               </div>
