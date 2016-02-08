@@ -39,24 +39,32 @@
 
 
     <div class="ui main container">
-      <div class="ui raised text container segment" id="about">
+      <h2 class="ui blue top attached center aligned header" id="about">About</h2>
+      <div class="ui attached raised container segment">
         <h1 class="ui header">Nathan Riemer</h1>
-        <p>I'm a web developer with a passion for problem solving.</p>
+        <p>I'm a full stack web developer with a background in Computer Science. I love a challenge and feel as comfortable delivering under tight deadlines as taking the time to deep-dive into a complicated problem. In my spare time I'm an avid runner and marathoner.</p>
       </div>
 
-      <section id="projects" ng-controller="ProjectsController as projects">
-        <h1>Projects:</h1>
-        <p>Show:</p>
+
+      <h2 class="ui blue top attached center aligned header" id="projects">Projects</h2>
+      <div class="ui attached raised container segment" ng-controller="ProjectsController as projects">
+        <!-- <h1 class="ui header">Projects:</h1> -->
+        <div class="ui horizontal divider">
+          <i class="filter icon"></i>
+          Filter
+        </div>
         <button class="compact mini ui button" ng-repeat="technology in projects.technologies" ng-click="projects.fetch(technology)">{{technology}}</button>
 
-        <div class="three ui cards">
+        <div class="ui divider"></div>
+
+        <div class="two stackable ui cards">
           <div class="card" ng-repeat="project in projects.all">
             <div class="image">
               <img ng-src="{{project.image}}">
             </div>
             <div class="content">
               <a class="header" href="{{project.url}}" target="_blank">{{project.title}}</a>
-              <a class="meta" href="{{project.github}}" target="_blank">GitHub Repo</a>
+              <a class="meta" href="{{project.github}}" target="_blank"><i class="github icon"></i>GitHub Repo</a>
               <div class="description">
                 {{project.description}}
               </div>
@@ -69,11 +77,20 @@
           </div>
 
         </div> <!-- .ui.cards -->
-      </section>
+      </div>
 
-      <section id="contact">
-        <p>Contact info?</p>
-      </section>
+
+      <h2 class="ui blue top attached center aligned header" id="contact">Contact</h2>
+      <div class="ui attached raised container segment">
+        <div class="ui list">
+          <div class="item">
+            <i class="github icon"></i>
+            <div class="content">
+              <a href="https://github.com/NathanRiemer" target="_blank">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div> <!-- .main -->
   </body>
 </html>
