@@ -10,6 +10,18 @@ mongoose.connect(mongoUrl, function(err) {
 
 var Project = require('./models/project');
 
+
+// mongoose.connection.db.dropCollection('projects', function(err, result) {
+//   if (err) {
+//     console.log(err);
+//   }
+//   console.log('reset');
+// });
+
+Project.remove({}, function(err) {
+  console.log('reset');
+});
+
 var projects = [
   {
     title: "IO Behave",
@@ -17,7 +29,7 @@ var projects = [
     github: 'https://github.com/NathanRiemer/project_four',
     image: "/images/behave.png",
     description: "Check it out for yourself! You can log in with the username 'jday' and the password 'paulsimon'. My app allows teachers to track their students' behavior via quick positive and negative records as well as more detailed note records. The teachers can view a feed of the day's records for their class and can view graphs of historical data.",
-    technologies: ["HTML", "CSS", "JavaScript", "jQuery"]
+    technologies: ["HTML", "CSS", "JavaScript", "jQuery", "Node.js", "AngularJS", "AJAX", "MongoDB"]
   },
   {
     title: "Concentration",
@@ -33,7 +45,7 @@ var projects = [
     github: 'https://github.com/NathanRiemer/wiki-project',
     image: "/images/wiki_v1.png",
     description: "A Star Wars wiki implemented in Ruby with Sinatra. Sign up/log in, view and edit articles and categories, and view, comment on, and diff past revisions.",
-    technologies: ["HTML", "CSS", "JavaScript", "jQuery", "Ruby", "Sinatra"]
+    technologies: ["HTML", "CSS", "JavaScript", "jQuery", "Ruby", "Sinatra", "SQL"]
   },
   {
     title: "GA Admissions Portal",
@@ -41,7 +53,7 @@ var projects = [
     github: 'https://github.com/persephone-admissions/admissions_app',
     image: "/images/admissions.png",
     description: "Developed with a small team. Prospective students, admissions officers, and instructors can log in and submit/review applications, edit interview questionnaires, and conduct interviews. Appropriate actions trigger application status updates and emails to relevant parties.",
-    technologies: ["HTML", "CSS", "JavaScript", "jQuery", "Ruby", "Rails", "AJAX"]
+    technologies: ["HTML", "CSS", "JavaScript", "jQuery", "Ruby", "Rails", "AJAX", "SQL"]
   },
   {
     title: "Wiki (Rails)",
@@ -49,7 +61,7 @@ var projects = [
     github: 'https://github.com/NathanRiemer/wiki_app',
     image: "/images/wiki_v2.png",
     description: "The Star Wars wiki re-implemented in Rails.",
-    technologies: ["HTML", "CSS", "Ruby", "Rails"]
+    technologies: ["HTML", "CSS", "Ruby", "Rails", "SQL"]
   },
   {
     title: "Tic Tac Toe",

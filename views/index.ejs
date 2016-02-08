@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html ng-app="PortfolioApp">
   <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Nathan Riemer</title>
 
 
@@ -16,7 +19,7 @@
 
     <style type="text/css">
     .main.container {
-      margin-top: 7em;
+      margin-top: 4em;
     }
     </style>
 
@@ -41,16 +44,15 @@
         <p>I'm a web developer with a passion for problem solving.</p>
       </div>
 
-      <section id="projects">
+      <section id="projects" ng-controller="ProjectsController as projects">
         <h1>Projects:</h1>
         <p>Show:</p>
-        <ul class="technology-filter">
-          <li><button>All</button></li>
-        </ul>
-        <div class="three ui cards" ng-controller="ProjectsController as projects">
+        <button class="compact mini ui button" ng-repeat="technology in projects.technologies" ng-click="projects.fetch(technology)">{{technology}}</button>
+
+        <div class="three ui cards">
           <div class="card" ng-repeat="project in projects.all">
             <div class="image">
-              <img src="{{project.image}}">
+              <img ng-src="{{project.image}}">
             </div>
             <div class="content">
               <a class="header" href="{{project.url}}" target="_blank">{{project.title}}</a>

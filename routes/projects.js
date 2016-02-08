@@ -7,9 +7,17 @@ var Project = require('../models/project');
 
 
 router.get('/', function(req, res) {
-  Project.find(function(err, projects) {
-    res.json({projects: projects});
-  });
+
+  var tech = req.query.tech;
+  if (tech === 'All') {
+    Project.find(function(err, projects) {
+      res.json({projects: projects});
+    });    
+  } else {
+    Project.find({technologies: { $in: [tech]}}).exec(function(err, projects) {
+      res.json({projects: projects});
+    });
+  }
 });
 
 module.exports = router;

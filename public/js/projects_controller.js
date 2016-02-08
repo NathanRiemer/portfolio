@@ -4,17 +4,31 @@ ProjectsController.$inject = ['$http'];
 
 function ProjectsController($http) {
   var projects = this;
-  projects.thing = "what";
-
   projects.all = [];
 
-  projects.fetch = function() {
+  projects.technologies = [
+    'All',
+    'HTML',
+    'CSS',
+    'JavaScript',
+    'jQuery',
+    'Ruby',
+    'Sinatra',
+    'Rails',
+    'AJAX',
+    'SQL',
+    'MongoDB',
+    'Node.js',
+    'AngularJS'
+  ];
+
+  projects.fetch = function(tech) {
     $http
-      .get('/projects')
+      .get('/projects?tech=' + tech)
       .then(function(response) {
         projects.all = response.data.projects;
     });
   };
 
-  projects.fetch();
+  projects.fetch('All');
 };
