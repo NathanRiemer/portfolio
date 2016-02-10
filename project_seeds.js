@@ -10,14 +10,6 @@ mongoose.connect(mongoUrl, function(err) {
 
 var Project = require('./models/project');
 
-
-// mongoose.connection.db.dropCollection('projects', function(err, result) {
-//   if (err) {
-//     console.log(err);
-//   }
-//   console.log('reset');
-// });
-
 Project.remove({}, function(err) {
   console.log('reset');
 });
@@ -32,12 +24,12 @@ var projects = [
     technologies: ["HTML", "CSS", "JavaScript", "jQuery", "Node.js", "AngularJS", "AJAX", "MongoDB"]
   },
   {
-    title: "Concentration",
-    url: "http://nathanriemer.github.io/concentration/",
-    github: 'https://github.com/NathanRiemer/concentration',
-    image: "/images/concentrate.png",
-    description: "The classic memory/concentration game. Choose from multiple image sets and difficulty levels.",
-    technologies: ["HTML", "CSS", "JavaScript", "jQuery"]
+    title: "GA Admissions Portal",
+    url: "https://persephone-admissions.herokuapp.com/",
+    github: 'https://github.com/persephone-admissions/admissions_app',
+    image: "/images/admissions.png",
+    description: "Developed with a small team. Prospective students, admissions officers, and instructors can log in and submit/review applications, edit interview questionnaires, and conduct interviews. Appropriate actions trigger application status updates and emails to relevant parties.",
+    technologies: ["HTML", "CSS", "JavaScript", "jQuery", "Ruby", "Rails", "AJAX", "SQL"]
   },
   {
     title: "Wiki (Sinatra)",
@@ -48,20 +40,28 @@ var projects = [
     technologies: ["HTML", "CSS", "JavaScript", "jQuery", "Ruby", "Sinatra", "SQL"]
   },
   {
-    title: "GA Admissions Portal",
-    url: "https://persephone-admissions.herokuapp.com/",
-    github: 'https://github.com/persephone-admissions/admissions_app',
-    image: "/images/admissions.png",
-    description: "Developed with a small team. Prospective students, admissions officers, and instructors can log in and submit/review applications, edit interview questionnaires, and conduct interviews. Appropriate actions trigger application status updates and emails to relevant parties.",
-    technologies: ["HTML", "CSS", "JavaScript", "jQuery", "Ruby", "Rails", "AJAX", "SQL"]
-  },
-  {
     title: "Wiki (Rails)",
     url: "https://wiki-sw-v2.herokuapp.com/",
     github: 'https://github.com/NathanRiemer/wiki_app',
     image: "/images/wiki_v2.png",
     description: "The Star Wars wiki re-implemented in Rails.",
     technologies: ["HTML", "CSS", "Ruby", "Rails", "SQL"]
+  },
+  {
+    title: "Concentration",
+    url: "http://nathanriemer.github.io/concentration/",
+    github: 'https://github.com/NathanRiemer/concentration',
+    image: "/images/concentrate.png",
+    description: "The classic memory/concentration game. Choose from multiple image sets and difficulty levels.",
+    technologies: ["HTML", "CSS", "JavaScript", "jQuery"]
+  },
+  {
+    title: "Portfolio",
+    url: "https://nathan-riemer-portfolio.herokuapp.com/",
+    github: 'https://github.com/NathanRiemer/portfolio',
+    image: "/images/portfolio.png",
+    description: "You're looking at it!",
+    technologies: ["HTML", "CSS", "JavaScript", "Node.js", "AngularJS", "AJAX", "MongoDB"]
   },
   {
     title: "Tic Tac Toe",
